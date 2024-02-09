@@ -1,8 +1,0 @@
-C:\Users\Daniel\Documents\School\College\Senior\capstone\DotNet_LJM_2018_03_14\Examples\C#\More\DIO\SingleDIO\bin\Debug\SingleDIO.exe
-C:\Users\Daniel\Documents\School\College\Senior\capstone\DotNet_LJM_2018_03_14\Examples\C#\More\DIO\SingleDIO\bin\Debug\SingleDIO.pdb
-C:\Users\Daniel\Documents\School\College\Senior\capstone\DotNet_LJM_2018_03_14\Examples\C#\More\DIO\SingleDIO\bin\Debug\LabJack.LJM.dll
-C:\Users\Daniel\Documents\School\College\Senior\capstone\DotNet_LJM_2018_03_14\Examples\C#\More\DIO\SingleDIO\obj\Debug\SingleDIO.csproj.AssemblyReference.cache
-C:\Users\Daniel\Documents\School\College\Senior\capstone\DotNet_LJM_2018_03_14\Examples\C#\More\DIO\SingleDIO\obj\Debug\SingleDIO.csproj.CoreCompileInputs.cache
-C:\Users\Daniel\Documents\School\College\Senior\capstone\DotNet_LJM_2018_03_14\Examples\C#\More\DIO\SingleDIO\obj\Debug\SingleDIO.csproj.CopyComplete
-C:\Users\Daniel\Documents\School\College\Senior\capstone\DotNet_LJM_2018_03_14\Examples\C#\More\DIO\SingleDIO\obj\Debug\SingleDIO.exe
-C:\Users\Daniel\Documents\School\College\Senior\capstone\DotNet_LJM_2018_03_14\Examples\C#\More\DIO\SingleDIO\obj\Debug\SingleDIO.pdb
