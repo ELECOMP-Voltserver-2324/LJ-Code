@@ -53,11 +53,12 @@ namespace StepControl
                 string pulse_pin = "DAC0";
                 int uptime = 3; //time pule_pin is high
                 int downtime = 3; //time pulse_pin is low
+                int pulse_count = 2000;
                 
                 LJM.eWriteName(handle, dir_pin, 1); //Direction signal
                 LJM.eWriteName(handle, pulse_pin, 0);//Set initial pulse low
 
-                int disp = 2000;
+                
                 for (int i = 0; i < disp; i++) 
                 {
                     System.Threading.Thread.Sleep(downtime);   //Toggles pulse_pin on and off
