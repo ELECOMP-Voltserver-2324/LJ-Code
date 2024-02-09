@@ -49,11 +49,12 @@ namespace StepControl
                 Console.WriteLine("Opened a LabJack with Device type: " + devType + ", Connection type: " + conType + ",");
 
               
-                string dir_pin = "DAC1";
-                string pulse_pin = "DAC0";
+                string dir_pin = "DAC1";    //pin indicating step direction
+                string pulse_pin = "DAC0";  //pin giving step pulse
+
                 int uptime = 3;             //time pule_pin is high
                 int downtime = 3;           //time pulse_pin is low
-                int step_count = 2000;      //how many steps to make
+                int step_count = 2000;      //how many steps to take
                 int dir = 5;                //step direction (5 = Foward, 0 = Back) 
                 
                 LJM.eWriteName(handle, dir_pin, dir); //Direction signal
