@@ -43,47 +43,27 @@ namespace StepControl
             {
                 //Open first found LabJack
                 LJM.OpenS("ANY", "ANY", "ANY", ref handle);  // Any device, Any connection, Any identifier
-                //LJM.OpenS("T7", "ANY", "ANY", ref handle);  // T7 device, Any connection, Any identifier
-                //LJM.OpenS("T4", "ANY", "ANY", ref handle);  // T4 device, Any connection, Any identifier
-                //LJM.Open(LJM.CONSTANTS.dtANY, LJM.CONSTANTS.ctANY, "ANY", ref handle);  // Any device, Any connection, Any identifier
 
                 LJM.GetHandleInfo(handle, ref devType, ref conType, ref serNum, ref ipAddr, ref port, ref maxBytesPerMB);
                 LJM.NumberToIP(ipAddr, ref ipAddrStr);
                 Console.WriteLine("Opened a LabJack with Device type: " + devType + ", Connection type: " + conType + ",");
-                Console.WriteLine("Serial number: " + serNum + ", IP address: " + ipAddrStr + ", Port: " + port + ",");
-                Console.WriteLine("Max bytes per MB: " + maxBytesPerMB);
 
-                //Setup and call eWriteName to set the DIO state.
-                if(devType == LJM.CONSTANTS.dtT4)
-                {
-                    //Setting FIO4 on the LabJack T4. FIO0-FIO3 are reserved for
-                    //AIN0-AIN3.
-                    name = "DAC0";
-
-                    //If the FIO/EIO line is an analog input, it needs to first
-                    //be changed to a digital I/O by reading from the line or
-                    //setting it to digital I/O with the DIO_ANALOG_ENABLE
-                    //register.
-
-                    //Reading from the digital line in case it was previously
-                    //an analog input.
-                    LJM.eReadName(handle, name, ref state);
-                }
-                else
-                {
-                    //Setting FIO0 on the LabJack T7 and other devices.
-                    name = "FIO0";
-                }
+              
+                string dir_pin = "DAC1";
+                string pulse_pin = "DAC0";
+                int uptime = 3; //time pule_pin is high
+                int downtime = 3; //time pulse_pin is low
                 
-                LJM.eWriteName(handle, "DAC1", 1); //Direction signal
-                LJM.eWriteName(handle, name, 0);
-                int disp = 20000;
+                LJM.eWriteName(handle, dir_pin, 1); //Direction signal
+                LJM.eWriteName(handle, pulse_pin, 0);//Set initial pulse low
+
+                int disp = 2000;
                 for (int i = 0; i < disp; i++) 
                 {
-                    System.Threading.Thread.Sleep(3);
-                    LJM.eWriteName(handle, name, 1);
-                    System.Threading.Thread.Sleep(3);
-                    LJM.eWriteName(handle, name, 0);
+                    System.Threading.Thread.Sleep(downtime);   //Toggles pulse_pin on and off
+                    LJM.eWriteName(handle, pulse_pin, 1);
+                    System.Threading.Thread.Sleep(uptime);
+                    LJM.eWriteName(handle, pulse_pin, 0);
                 }
 
                 Console.WriteLine("\nDone! " + disp +" pulses outputed.");
