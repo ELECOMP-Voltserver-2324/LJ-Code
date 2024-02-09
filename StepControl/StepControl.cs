@@ -61,7 +61,7 @@ namespace StepControl
                 LJM.eWriteName(handle, pulse_pin, 0);//Set initial pulse low
 
                 
-                for (int i = 0; i < disp; i++) 
+                for (int i = 0; i < step_count; i++) 
                 {
                     System.Threading.Thread.Sleep(downtime);   //Toggles pulse_pin on and off
                     LJM.eWriteName(handle, pulse_pin, 5);
