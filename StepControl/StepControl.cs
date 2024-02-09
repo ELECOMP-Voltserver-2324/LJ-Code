@@ -51,18 +51,19 @@ namespace StepControl
               
                 string dir_pin = "DAC1";
                 string pulse_pin = "DAC0";
-                int uptime = 3; //time pule_pin is high
-                int downtime = 3; //time pulse_pin is low
-                int pulse_count = 2000;
+                int uptime = 3;             //time pule_pin is high
+                int downtime = 3;           //time pulse_pin is low
+                int step_count = 2000;      //how many steps to make
+                int dir = 5;                //step direction (5 = Foward, 0 = Back) 
                 
-                LJM.eWriteName(handle, dir_pin, 1); //Direction signal
+                LJM.eWriteName(handle, dir_pin, dir); //Direction signal
                 LJM.eWriteName(handle, pulse_pin, 0);//Set initial pulse low
 
                 
                 for (int i = 0; i < disp; i++) 
                 {
                     System.Threading.Thread.Sleep(downtime);   //Toggles pulse_pin on and off
-                    LJM.eWriteName(handle, pulse_pin, 1);
+                    LJM.eWriteName(handle, pulse_pin, 5);
                     System.Threading.Thread.Sleep(uptime);
                     LJM.eWriteName(handle, pulse_pin, 0);
                 }
