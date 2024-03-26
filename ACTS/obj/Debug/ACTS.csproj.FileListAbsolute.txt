@@ -1,0 +1,8 @@
+C:\Users\Daniel\source\repos\LJCode\ACTS\obj\Debug\ACTS.csproj.AssemblyReference.cache
+C:\Users\Daniel\source\repos\LJCode\ACTS\obj\Debug\ACTS.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\source\repos\LJCode\ACTS\bin\Debug\ACTS.exe
+C:\Users\Daniel\source\repos\LJCode\ACTS\bin\Debug\ACTS.pdb
+C:\Users\Daniel\source\repos\LJCode\ACTS\bin\Debug\LabJack.LJM.dll
+C:\Users\Daniel\source\repos\LJCode\ACTS\obj\Debug\ACTS.csproj.CopyComplete
+C:\Users\Daniel\source\repos\LJCode\ACTS\obj\Debug\ACTS.exe
+C:\Users\Daniel\source\repos\LJCode\ACTS\obj\Debug\ACTS.pdb
